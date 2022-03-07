@@ -1,7 +1,7 @@
 import axios from "axios";
 import {useState} from "react";
 
-export default function AddProject(props){
+export default function AddTask(props){
 
     const API_URL = "http://localhost:5005";
 
@@ -14,9 +14,9 @@ export default function AddProject(props){
         event.preventDefault();
 
         // --------- move to its own folder and call createOneProject() -------
-        axios.post(`${API_URL}/api/projects`, formData)
+        axios.post(`${API_URL}/api/tasks`, formData)
         .then((_)=>{
-            props.refreshProjects();
+            props.refreshProject();
             setFormData({
                 title: "",
                 description: ""
@@ -34,7 +34,7 @@ export default function AddProject(props){
 
     return(
         <div className="AddProject">
-            <h3>Add a project</h3>
+            <h3>Add a task</h3>
             <form onSubmit={handleSubmit}>
                 <label>Title:</label>
                 <input type="text" name="title" value={formData.title} onChange={handleChange} />

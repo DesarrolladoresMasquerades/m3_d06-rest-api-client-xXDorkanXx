@@ -1,6 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
-import { useEffect } from "react-dom";
+import { useState, useEffect } from "react";
 import AddProject from "../components/AddProject";
 import ProjectCard from "../components/ProjectCard";
 
@@ -8,7 +7,7 @@ export default function ProjectsListPage(){
 
     const [projects, setProjects] = useState([]);
 
-    const API_URL = "http://localhost:5000";
+    const API_URL = "http://localhost:5005";
     
 
     // --------- put away in a folder -------

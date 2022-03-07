@@ -6,7 +6,7 @@ export default function  ProjectCard(props){
 
     return(
         <div className="ProjectCard card">
-            <Link to={`/${_id}`}>
+            <Link to={`/projects/${_id}`}>
                 <h3>{title}</h3>
             </Link>
             <p style={{ maxWidth: "400px" }}>{description} </p>
