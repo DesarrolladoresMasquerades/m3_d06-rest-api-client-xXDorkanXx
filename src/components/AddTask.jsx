@@ -7,7 +7,8 @@ export default function AddTask(props){
 
     const [formData, setFormData] = useState({
         title: "",
-        description: ""
+        description: "",
+        project: props.projectId
     });
 
     function handleSubmit(event){
@@ -19,7 +20,8 @@ export default function AddTask(props){
             props.refreshProject();
             setFormData({
                 title: "",
-                description: ""
+                description: "",
+                project: props.projectId
             })
         })
         // --------- move to its own folder and call createOneProject() -------

@@ -22,19 +22,23 @@ export default function ProjectDetailsPage(){
     }, []);
 
 
-    return (
+    return (project._id ?
         <div className="ProjectDetails">
             {project && (
                 <div>
                     <h1>{project.title}</h1>
                     <p>{project.description}</p>
-                    <button onClick={()=>console.log("project: ", project, " project tasks array: ", project.tasks, " tasks array length: ", project.tasks.length)}>consolelog</button>
                 </div>
             )}
 
             <AddTask refreshProject={getProject} projectId={projectId} />
-            
+            {project.tasks.map((task)=> <TaskCard key={task._id} task={task}/>)}
 
+        </div>
+        :
+        <div>
+            <img src="https://c.tenor.com/tEBoZu1ISJ8AAAAC/spinning-loading.gif" alt="loading-img" width={300}/>
+            <p>Loading...</p>
         </div>
     )
 }
